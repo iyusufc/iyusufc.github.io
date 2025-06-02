@@ -55,104 +55,615 @@
             .cursor { display: none; }
         }
 
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 40px; background: rgba(20, 20, 20, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
-        .logo { font-size: 28px; font-weight: 900; letter-spacing: 5px; color: #ffffff; text-transform: uppercase; }
-        .nav-links { display: flex; gap: 40px; list-style: none; }
-        .nav-links a { color: #e0e0e0; text-decoration: none; font-weight: 400; letter-spacing: 1.5px; transition: all 0.3s ease; position: relative; }
-        .nav-links a:hover { color: #00f0ff; text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
-        .nav-links a::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -2px; left: 0; background: #00f0ff; transition: width 0.3s ease; }
-        .nav-links a:hover::after { width: 100%; }
-        .hamburger { display: none; font-size: 24px; cursor: pointer; color: #e0e0e0; }
+        nav { 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            z-index: 1000; 
+            padding: 20px 40px; 
+            background: rgba(20, 20, 20, 0.7); 
+            backdrop-filter: blur(12px); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+        }
+        .nav-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+        .logo { 
+            font-size: 28px; 
+            font-weight: 900; 
+            letter-spacing: 5px; 
+            color: #ffffff; 
+            text-transform: uppercase; 
+        }
+        .nav-links { 
+            display: flex; 
+            gap: 40px; 
+            list-style: none; 
+        }
+        .nav-links a { 
+            color: #e0e0e0; 
+            text-decoration: none; 
+            font-weight: 400; 
+            letter-spacing: 1.5px; 
+            transition: all 0.3s ease; 
+            position: relative; 
+        }
+        .nav-links a:hover { 
+            color: #00f0ff; 
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); 
+        }
+        .nav-links a::after { 
+            content: ''; 
+            position: absolute; 
+            width: 0; 
+            height: 1px; 
+            bottom: -2px; 
+            left: 0; 
+            background: #00f0ff; 
+            transition: width 0.3s ease; 
+        }
+        .nav-links a:hover::after { 
+            width: 100%; 
+        }
+        .hamburger { 
+            display: none; 
+            font-size: 24px; 
+            cursor: pointer; 
+            color: #e0e0e0; 
+        }
 
-        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; background: linear-gradient(135deg, #121212, #1e1e1e); overflow: hidden; }
-        .hero-content { text-align: center; z-index: 2; }
-        .hero h1 { font-size: clamp(3rem, 8vw, 8rem); font-weight: 900; letter-spacing: 10px; margin-bottom: 20px; color: #ffffff; opacity: 0; animation: fadeInUp 1s ease forwards 0.5s; text-transform: uppercase; }
-        .tagline { font-size: clamp(1rem, 2vw, 1.5rem); font-weight: 400; letter-spacing: 3px; opacity: 0.7; margin-bottom: 40px; color: #e0e0e0; opacity: 0; animation: fadeInUp 1s ease forwards 1s; }
-        .hero-cta { background: rgba(0, 240, 255, 0.1); border: 1px solid #00f0ff; color: #00f0ff; padding: 15px 40px; font-size: 14px; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; border-radius: 4px; backdrop-filter: blur(8px); opacity: 0; animation: fadeInUp 1s ease forwards 1.5s; text-transform: uppercase; }
-        .hero-cta:hover { background: #00f0ff; color: #121212; box-shadow: 0 0 20px rgba(0, 240, 255, 0.5); }
+        .hero { 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            position: relative; 
+            background: linear-gradient(135deg, #121212, #1e1e1e); 
+            overflow: hidden; 
+        }
+        .hero-content { 
+            text-align: center; 
+            z-index: 2; 
+        }
+        .hero h1 { 
+            font-size: clamp(3rem, 8vw, 8rem); 
+            font-weight: 900; 
+            letter-spacing: 10px; 
+            margin-bottom: 20px; 
+            color: #ffffff; 
+            opacity: 0; 
+            animation: fadeInUp 1s ease forwards 0.5s; 
+            text-transform: uppercase; 
+        }
+        .tagline { 
+            font-size: clamp(1rem, 2vw, 1.5rem); 
+            font-weight: 400; 
+            letter-spacing: 3px; 
+            opacity: 0.7; 
+            margin-bottom: 40px; 
+            color: #e0e0e0; 
+            opacity: 0; 
+            animation: fadeInUp 1s ease forwards 1s; 
+        }
+        .hero-cta { 
+            background: rgba(0, 240, 255, 0.1); 
+            border: 1px solid #00f0ff; 
+            color: #00f0ff; 
+            padding: 15px 40px; 
+            font-size: 14px; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            border-radius: 4px; 
+            backdrop-filter: blur(8px); 
+            opacity: 0; 
+            animation: fadeInUp 1s ease forwards 1.5s; 
+            text-transform: uppercase; 
+            text-decoration: none; 
+            display: inline-block; 
+        }
+        .hero-cta:hover { 
+            background: #00f0ff; 
+            color: #121212; 
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5); 
+        }
 
-        .particle-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.2; z-index: 1; }
+        .particle-canvas { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            opacity: 0.2; 
+            z-index: 1; 
+        }
 
-        .origin-section { padding: 80px 40px; background: #1a1a1a; text-align: center; }
-        .origin-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: 5px; margin-bottom: 40px; color: #ffffff; text-transform: uppercase; }
-        .origin-story { max-width: 800px; margin: 0 auto; font-size: 1rem; line-height: 1.6; opacity: 0.9; color: #e0e0e0; }
-        .origin-story h3 { font-size: 1.5rem; margin: 20px 0; font-weight: 700; color: #00f0ff; }
-        .origin-story p { margin-bottom: 15px; }
-        .encrypted-message { font-size: 0.9rem; color: #00f0ff; margin-top: 20px; letter-spacing: 2px; }
+        .origin-section { 
+            padding: 80px 40px; 
+            background: #1a1a1a; 
+            text-align: center; 
+        }
+        .origin-title { 
+            font-size: clamp(2rem, 5vw, 3rem); 
+            font-weight: 700; 
+            letter-spacing: 5px; 
+            margin-bottom: 40px; 
+            color: #ffffff; 
+            text-transform: uppercase; 
+        }
+        .origin-story { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            font-size: 1rem; 
+            line-height: 1.6; 
+            opacity: 0.9; 
+            color: #e0e0e0; 
+        }
+        .origin-story h3 { 
+            font-size: 1.5rem; 
+            margin: 20px 0; 
+            font-weight: 700; 
+            color: #00f0ff; 
+        }
+        .origin-story p { 
+            margin-bottom: 15px; 
+        }
+        .encrypted-message { 
+            font-size: 0.9rem; 
+            color: #00f0ff; 
+            margin-top: 20px; 
+            letter-spacing: 2px; 
+        }
 
-        .product-section { padding: 120px 40px; max-width: 1400px; margin: 0 auto; }
-        .section-title { font-size: clamp(2rem, 5vw, 4rem); font-weight: 700; letter-spacing: 5px; text-align: center; margin-bottom: 80px; color: #ffffff; opacity: 0; text-transform: uppercase; }
-        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 100px; }
-        .product-canvas { max-width: 600px; width: 100%; height: 600px; }
-        .product-info { padding: 40px; background: rgba(20, 20, 20, 0.7); border-radius: 8px; backdrop-filter: blur(8px); }
-        .product-info h3 { font-size: 2.5rem; font-weight: 700; letter-spacing: 3px; margin-bottom: 30px; color: #ffffff; text-transform: uppercase; }
-        .product-features { list-style: none; margin-bottom: 50px; }
-        .product-features li { padding: 15px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.9rem; letter-spacing: 1px; color: #e0e0e0; }
-        .limited-badge { display: inline-block; background: linear-gradient(45deg, #00f0ff, #ff00ff); color: #121212; padding: 8px 20px; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; border-radius: 20px; margin-bottom: 20px; text-transform: uppercase; }
-        .countdown { font-size: 1.2rem; letter-spacing: 2px; margin-top: 20px; opacity: 0.8; color: #00f0ff; }
-        .visitor-counter { font-size: 1rem; letter-spacing: 1px; margin-top: 10px; opacity: 0.7; color: #e0e0e0; }
-        .shipping-info { font-size: 0.9rem; opacity: 0.7; margin-top: 20px; color: #e0e0e0; }
-        .calendar { margin-top: 20px; font-size: 0.9rem; opacity: 0.7; color: #e0e0e0; }
-        .preorder-form { margin-top: 30px; display: flex; flex-direction: column; gap: 20px; max-width: 400px; }
-        .preorder-form label { font-size: 0.9rem; letter-spacing: 1px; opacity: 0.8; color: #e0e0e0; }
-        .preorder-form select, .preorder-form input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); color: #e0e0e0; padding: 12px; font-size: 0.9rem; border-radius: 4px; }
-        .preorder-form button { background: rgba(0, 240, 255, 0.1); border: 1px solid #00f0ff; color: #00f0ff; padding: 12px; font-size: 14px; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; border-radius: 4px; backdrop-filter: blur(6px); text-transform: uppercase; }
-        .preorder-form button:hover { background: #00f0ff; color: #121212; box-shadow: 0 0 20px rgba(0, 240, 255, 0.5); }
-        .member-login { margin-top: 20px; }
-        .member-login a { color: #00f0ff; text-decoration: none; font-size: 0.9rem; }
-        .member-login a:hover { text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
+        .product-section { 
+            padding: 120px 40px; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+        .section-title { 
+            font-size: clamp(2rem, 5vw, 4rem); 
+            font-weight: 700; 
+            letter-spacing: 5px; 
+            text-align: center; 
+            margin-bottom: 80px; 
+            color: #ffffff; 
+            opacity: 0; 
+            text-transform: uppercase; 
+        }
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 80px; 
+            align-items: center; 
+            margin-bottom: 100px; 
+        }
+        .product-canvas { 
+            max-width: 450px; /* Perfect size to balance with text */
+            width: 100%; 
+            height: auto; 
+            position: relative; 
+            margin: 0 auto; 
+        }
+        .product-canvas img { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+            object-fit: contain; 
+        }
+        .product-canvas .fallback-message { 
+            display: none; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            color: #e0e0e0; 
+            font-size: 1rem; 
+            text-align: center; 
+            opacity: 0.7; 
+        }
+        .product-canvas.error .fallback-message { 
+            display: block; 
+        }
+        .product-info { 
+            padding: 40px; 
+            background: rgba(20, 20, 20, 0.7); 
+            border-radius: 8px; 
+            backdrop-filter: blur(8px); 
+        }
+        .product-info h3 { 
+            font-size: 2.5rem; 
+            font-weight: 700; 
+            letter-spacing: 3px; 
+            margin-bottom: 30px; 
+            color: #ffffff; 
+            text-transform: uppercase; 
+        }
+        .product-features { 
+            list-style: none; 
+            margin-bottom: 50px; 
+        }
+        .product-features li { 
+            padding: 15px 0; 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+            font-size: 0.9rem; 
+            letter-spacing: 1px; 
+            color: #e0e0e0; 
+        }
+        .limited-badge { 
+            display: inline-block; 
+            background: linear-gradient(45deg, #00f0ff, #ff00ff); 
+            color: #121212; 
+            padding: 8px 20px; 
+            font-size: 0.8rem; 
+            font-weight: 700; 
+            letter-spacing: 2px; 
+            border-radius: 20px; 
+            margin-bottom: 20px; 
+            text-transform: uppercase; 
+        }
+        .countdown { 
+            font-size: 1.2rem; 
+            letter-spacing: 2px; 
+            margin-top: 20px; 
+            opacity: 0.8; 
+            color: #00f0ff; 
+        }
+        .visitor-counter { 
+            font-size: 1rem; 
+            letter-spacing: 1px; 
+            margin-top: 10px; 
+            opacity: 0.7; 
+            color: #e0e0e0; 
+        }
+        .shipping-info { 
+            font-size: 0.9rem; 
+            opacity: 0.7; 
+            margin-top: 20px; 
+            color: #e0e0e0; 
+        }
+        .calendar { 
+            margin-top: 20px; 
+            font-size: 0.9rem; 
+            opacity: 0.7; 
+            color: #e0e0e0; 
+        }
+        .preorder-form { 
+            margin-top: 30px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+            max-width: 400px; 
+        }
+        .preorder-form label { 
+            font-size: 0.9rem; 
+            letter-spacing: 1px; 
+            opacity: 0.8; 
+            color: #e0e0e0; 
+        }
+        .preorder-form select, .preorder-form input { 
+            background: rgba(255, 255, 255, 0.05); 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            color: #e0e0e0; 
+            padding: 12px; 
+            font-size: 0.9rem; 
+            border-radius: 4px; 
+        }
+        .preorder-form button { 
+            background: rgba(0, 240, 255, 0.1); 
+            border: 1px solid #00f0ff; 
+            color: #00f0ff; 
+            padding: 12px; 
+            font-size: 14px; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            border-radius: 4px; 
+            backdrop-filter: blur(6px); 
+            text-transform: uppercase; 
+        }
+        .preorder-form button:hover { 
+            background: #00f0ff; 
+            color: #121212; 
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5); 
+        }
+        .member-login { 
+            margin-top: 20px; 
+        }
+        .member-login a { 
+            color: #00f0ff; 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+        }
+        .member-login a:hover { 
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); 
+        }
 
-        .experience-section { background: #1a1a1a; padding: 120px 40px; }
-        .experience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; max-width: 1200px; margin: 0 auto; }
-        .experience-item { text-align: center; padding: 40px 20px; border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; transition: all 0.3s ease; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(8px); }
-        .experience-item:hover { border-color: #00f0ff; transform: translateY(-10px); box-shadow: 0 0 20px rgba(0, 240, 255, 0.2); }
-        .experience-icon { font-size: 3rem; margin-bottom: 30px; opacity: 0.8; color: #00f0ff; }
-        .experience-item h4 { font-size: 1.5rem; font-weight: 500; letter-spacing: 2px; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; }
-        .experience-item p { line-height: 1.6; opacity: 0.7; font-size: 0.95rem; color: #e0e0e0; }
+        .experience-section { 
+            background: #1a1a1a; 
+            padding: 120px 40px; 
+        }
+        .experience-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 60px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        .experience-item { 
+            text-align: center; 
+            padding: 40px 20px; 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            border-radius: 8px; 
+            transition: all 0.3s ease; 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(8px); 
+        }
+        .experience-item:hover { 
+            border-color: #00f0ff; 
+            transform: translateY(-10px); 
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.2); 
+        }
+        .experience-icon { 
+            font-size: 3rem; 
+            margin-bottom: 30px; 
+            opacity: 0.8; 
+            color: #00f0ff; 
+        }
+        .experience-item h4 { 
+            font-size: 1.5rem; 
+            font-weight: 500; 
+            letter-spacing: 2px; 
+            margin-bottom: 20px; 
+            color: #ffffff; 
+            text-transform: uppercase; 
+        }
+        .experience-item p { 
+            line-height: 1.6; 
+            opacity: 0.7; 
+            font-size: 0.95rem; 
+            color: #e0e0e0; 
+        }
 
-        .stats-section { padding: 120px 80px; text-align: center; background: #121212; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 80px; max-width: 1000px; margin: 0 auto; }
-        .stat-item { padding: 60px 40px; background: rgba(255, 255, 255, 0.03); border-radius: 8px; backdrop-filter: blur(8px); }
-        .stat-number { font-size: 4rem; font-weight: 900; letter-spacing: 2px; color: #ffffff; display: block; }
-        .stat-label { font-size: 0.9rem; letter-spacing: 3px; opacity: 0.6; text-transform: uppercase; margin-top: 10px; color: #e0e0e0; }
+        .stats-section { 
+            padding: 120px 80px; 
+            text-align: center; 
+            background: #121212; 
+        }
+        .stats-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 80px; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+        }
+        .stat-item { 
+            padding: 60px 40px; 
+            background: rgba(255, 255, 255, 0.03); 
+            border-radius: 8px; 
+            backdrop-filter: blur(8px); 
+        }
+        .stat-number { 
+            font-size: 4rem; 
+            font-weight: 900; 
+            letter-spacing: 2px; 
+            color: #ffffff; 
+            display: block; 
+        }
+        .stat-label { 
+            font-size: 0.9rem; 
+            letter-spacing: 3px; 
+            opacity: 0.6; 
+            text-transform: uppercase; 
+            margin-top: 10px; 
+            color: #e0e0e0; 
+        }
 
-        .cta-section { background: linear-gradient(135deg, #1a1a1a, #252525); padding: 140px 80px; text-align: center; }
-        .cta-content h2 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 900; letter-spacing: 4px; margin-bottom: 40px; color: #ffffff; text-transform: uppercase; }
-        .cta-content p { font-size: 1.2rem; opacity: 0.8; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6; color: #e0e0e0; }
-        .cta-buttons { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
-        .btn-primary { background: rgba(0, 240, 255, 0.1); border: 1px solid #00f0ff; color: #00f0ff; padding: 18px 45px; font-size: 14px; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; border-radius: 4px; backdrop-filter: blur(8px); text-transform: uppercase; }
-        .btn-primary:hover { background: #00f0ff; color: #121212; box-shadow: 0 0 20px rgba(0, 240, 255, 0.5); }
-        .btn-secondary { background: transparent; border: 1px solid #e0e0e0; color: #e0e0e0; padding: 18px 45px; font-size: 14px; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; border-radius: 4px; backdrop-filter: blur(8px); text-transform: uppercase; }
-        .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: #00f0ff; color: #00f0ff; }
+        .cta-section { 
+            background: linear-gradient(135deg, #1a1a1a, #252525); 
+            padding: 140px 80px; 
+            text-align: center; 
+        }
+        .cta-content h2 { 
+            font-size: clamp(2.5rem, 6vw, 5rem); 
+            font-weight: 900; 
+            letter-spacing: 4px; 
+            margin-bottom: 40px; 
+            color: #ffffff; 
+            text-transform: uppercase; 
+        }
+        .cta-content p { 
+            font-size: 1.2rem; 
+            opacity: 0.8; 
+            margin-bottom: 60px; 
+            max-width: 700px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            line-height: 1.6; 
+            color: #e0e0e0; 
+        }
+        .cta-buttons { 
+            display: flex; 
+            gap: 40px; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+        }
+        .btn-primary { 
+            background: rgba(0, 240, 255, 0.1); 
+            border: 1px solid #00f0ff; 
+            color: #00f0ff; 
+            padding: 18px 45px; 
+            font-size: 14px; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            border-radius: 4px; 
+            backdrop-filter: blur(8px); 
+            text-transform: uppercase; 
+        }
+        .btn-primary:hover { 
+            background: #00f0ff; 
+            color: #121212; 
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5); 
+        }
+        .btn-secondary { 
+            background: transparent; 
+            border: 1px solid #e0e0e0; 
+            color: #e0e0e0; 
+            padding: 18px 45px; 
+            font-size: 14px; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            border-radius: 4px; 
+            backdrop-filter: blur(8px); 
+            text-transform: uppercase; 
+        }
+        .btn-secondary:hover { 
+            background: rgba(255, 255, 255, 0.1); 
+            border-color: #00f0ff; 
+            color: #00f0ff; 
+        }
 
-        footer { background: #0a0a0a; padding: 80px 80px 40px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-        .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; margin-bottom: 60px; }
-        .footer-section h4 { font-size: 1.2rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 30px; color: #ffffff; text-transform: uppercase; }
-        .footer-section a { color: rgba(255, 255, 255, 0.6); text-decoration: none; display: block; margin-bottom: 10px; transition: color 0.3s ease; }
-        .footer-section a:hover { color: #00f0ff; text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
-        .newsletter-form { display: flex; flex-direction: column; gap: 20px; max-width: 400px; }
-        .newsletter-form input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); color: #e0e0e0; padding: 12px; font-size: 0.9rem; border-radius: 4px; }
-        .newsletter-form button { background: rgba(0, 240, 255, 0.1); border: 1px solid #00f0ff; color: #00f0ff; padding: 12px; font-size: 14px; letter-spacing: 2px; cursor: pointer; transition: all 0.3s ease; border-radius: 4px; backdrop-filter: blur(8px); text-transform: uppercase; }
-        .newsletter-form button:hover { background: #00f0ff; color: #121212; box-shadow: 0 0 20px rgba(0, 240, 255, 0.5); }
-        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
-        .privacy-terms { margin-top: 20px; font-size: 0.8rem; }
-        .privacy-terms a { color: #00f0ff; text-decoration: none; }
-        .privacy-terms a:hover { text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
+        footer { 
+            background: #0a0a0a; 
+            padding: 80px 80px 40px; 
+            border-top: 1px solid rgba(255, 255, 255, 0.05); 
+        }
+        .footer-content { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 60px; 
+            margin-bottom: 60px; 
+        }
+        .footer-section h4 { 
+            font-size: 1.2rem; 
+            font-weight: 700; 
+            letter-spacing: 2px; 
+            margin-bottom: 30px; 
+            color: #ffffff; 
+            text-transform: uppercase; 
+        }
+        .footer-section a { 
+            color: rgba(255, 255, 255, 0.6); 
+            text-decoration: none; 
+            display: block; 
+            margin-bottom: 10px; 
+            transition: color 0.3s ease; 
+        }
+        .footer-section a:hover { 
+            color: #00f0ff; 
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); 
+        }
+        .newsletter-form { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+            max-width: 400px; 
+        }
+        .newsletter-form input { 
+            background: rgba(255, 255, 255, 0.05); 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            color: #e0e0e0; 
+            padding: 12px; 
+            font-size: 0.9rem; 
+            border-radius: 4px; 
+        }
+        .newsletter-form button { 
+            background: rgba(0, 240, 255, 0.1); 
+            border: 1px solid #00f0ff; 
+            color: #00f0ff; 
+            padding: 12px; 
+            font-size: 14px; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            border-radius: 4px; 
+            backdrop-filter: blur(8px); 
+            text-transform: uppercase; 
+        }
+        .newsletter-form button:hover { 
+            background: #00f0ff; 
+            color: #121212; 
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5); 
+        }
+        .footer-bottom { 
+            text-align: center; 
+            padding-top: 30px; 
+            border-top: 1px solid rgba(255, 255, 255, 0.05); 
+            color: rgba(255, 255, 255, 0.5); 
+            font-size: 0.9rem; 
+        }
+        .privacy-terms { 
+            margin-top: 20px; 
+            font-size: 0.8rem; 
+        }
+        .privacy-terms a { 
+            color: #00f0ff; 
+            text-decoration: none; 
+        }
+        .privacy-terms a:hover { 
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); 
+        }
 
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
-        .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInUp { 
+            from { opacity: 0; transform: translateY(30px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        .animate-on-scroll { 
+            opacity: 0; 
+            transform: translateY(30px); 
+            transition: all 0.6s ease; 
+        }
+        .animate-on-scroll.animated { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; right: 0; background: rgba(20, 20, 20, 0.9); padding: 20px; text-align: center; backdrop-filter: blur(12px); }
-            .nav-links.active { display: flex; }
-            .hamburger { display: block; }
-            .hero h1 { font-size: 3rem; letter-spacing: 4px; }
-            .product-grid { grid-template-columns: 1fr; gap: 40px; }
-            .product-canvas { max-width: 100%; height: 400px; }
-            .cta-buttons { flex-direction: column; align-items: center; }
-            .btn-primary, .btn-secondary { width: 100%; max-width: 300px; }
+            .nav-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 80px; 
+                left: 0; 
+                right: 0; 
+                background: rgba(20, 20, 20, 0.9); 
+                padding: 20px; 
+                text-align: center; 
+                backdrop-filter: blur(12px); 
+            }
+            .nav-links.active { 
+                display: flex; 
+            }
+            .hamburger { 
+                display: block; 
+            }
+            .hero h1 { 
+                font-size: 3rem; 
+                letter-spacing: 4px; 
+            }
+            .product-grid { 
+                grid-template-columns: 1fr; 
+                gap: 40px; 
+            }
+            .product-canvas { 
+                max-width: 100%; 
+                height: auto; 
+            }
+            .cta-buttons { 
+                flex-direction: column; 
+                align-items: center; 
+            }
+            .btn-primary, .btn-secondary { 
+                width: 100%; 
+                max-width: 300px; 
+            }
         }
     </style>
 </head>
@@ -180,7 +691,7 @@
         <div class="hero-content">
             <h1>FRQNCY</h1>
             <p class="tagline">HEARD BY THE FEW</p>
-            <button class="hero-cta">DISCOVER THE SIGNAL</button>
+            <a href="#origin" class="hero-cta" aria-label="Discover the signal and go to origin story">DISCOVER THE SIGNAL</a>
         </div>
     </section>
 
@@ -207,7 +718,8 @@
         
         <div class="product-grid">
             <div class="product-canvas animate-on-scroll">
-                <canvas id="hoodie-canvas" aria-label="Interactive 3D model of FRQNCY Signature Hoodie"></canvas>
+                <img id="hoodie-image" src="" alt="FRQNCY Signature Hoodie" aria-label="FRQNCY Signature Hoodie image">
+                <div class="fallback-message">Unable to load product image. Please try again later.</div>
             </div>
             <div class="product-info animate-on-scroll">
                 <div class="limited-badge">LIMITED TO 50 PIECES</div>
@@ -238,6 +750,26 @@
                 <div class="member-login"><a href="/login">Member Login</a></div>
             </div>
         </div>
+
+        <script>
+            // Dynamically load the image with error handling
+            const hoodieImage = document.getElementById('hoodie-image');
+            const imageUrl = 'https://iyusufc.github.io/testhoodie.jpg';
+
+            const img = new Image();
+            img.src = imageUrl;
+
+            img.onload = () => {
+                console.log('✅ Image loaded successfully!');
+                hoodieImage.src = imageUrl;
+            };
+
+            img.onerror = () => {
+                console.error('❌ Failed to load image at:', imageUrl);
+                hoodieImage.src = 'https://via.placeholder.com/600x400?text=Hoodie+Image+Failed';
+                document.querySelector('.product-canvas').classList.add('error');
+            };
+        </script>
     </section>
 
     <section class="experience-section" id="experience">
@@ -322,9 +854,6 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/controls/OrbitControls.js"></script>
     <script>
         document.addEventListener('selectstart', (e) => { if (!e.target.closest('input, select, textarea')) e.preventDefault(); });
         const cursor = document.querySelector('.cursor');
@@ -346,85 +875,96 @@
         const counterObserver = new IntersectionObserver((entries) => entries.forEach(entry => { if (entry.isIntersecting) { const counter = entry.target; const target = counter.textContent === '∞' ? '∞' : parseInt(counter.textContent); if (target !== '∞') { let current = 0; const increment = target / 50; const timer = setInterval(() => { current += increment; if (current >= target) { counter.textContent = target; clearInterval(timer); } else counter.textContent = Math.floor(current); }, 40); } } }), { threshold: 0.5 });
         counters.forEach(counter => counterObserver.observe(counter));
 
-        function startCountdown() { const countdownElement = document.getElementById('countdown'); const endDate = new Date(); endDate.setDate(endDate.getDate() + 7); function updateCountdown() { const now = new Date(); const timeLeft = endDate - now; if (timeLeft <= 0) { countdownElement.textContent = 'Drop Ended'; return; } const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24)); const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)); const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000); countdownElement.textContent = `Drop ends in: ${days}d ${hours}h ${minutes}m ${seconds}s`; } updateCountdown(); setInterval(updateCountdown, 1000); } startCountdown();
+        function startCountdown() { 
+            const countdownElement = document.getElementById('countdown'); 
+            const endDate = new Date(); 
+            endDate.setDate(endDate.getDate() + 7); 
+            function updateCountdown() { 
+                const now = new Date(); 
+                const timeLeft = endDate - now; 
+                if (timeLeft <= 0) { 
+                    countdownElement.textContent = 'Drop Ended'; 
+                    return; 
+                } 
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24)); 
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); 
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)); 
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000); 
+                countdownElement.textContent = `Drop ends in: ${days}d ${hours}h ${minutes}m ${seconds}s`; 
+            } 
+            updateCountdown(); 
+            setInterval(updateCountdown, 1000); 
+        } 
+        startCountdown();
 
-        function updateVisitorCounter() { const visitorCounter = document.getElementById('visitor-counter'); const baseVisitors = 150; const randomFlux = Math.floor(Math.random() * 50); visitorCounter.textContent = `${baseVisitors + randomFlux} people are here now`; } updateVisitorCounter(); setInterval(updateVisitorCounter, 10000);
+        function updateVisitorCounter() { 
+            const visitorCounter = document.getElementById('visitor-counter'); 
+            const baseVisitors = 150; 
+            const randomFlux = Math.floor(Math.random() * 50); 
+            visitorCounter.textContent = `${baseVisitors + randomFlux} people are here now`; 
+        } 
+        updateVisitorCounter(); 
+        setInterval(updateVisitorCounter, 10000);
 
         const preorderForm = document.querySelector('.preorder-form');
-        preorderForm.addEventListener('submit', (e) => { e.preventDefault(); const email = document.getElementById('email').value; const size = document.getElementById('size').value; const memberNumber = Math.floor(Math.random() * 50) + 1; alert(`You’ve been initiated. Signal received. Member #${memberNumber}. Your order for DROP 001: THE SIGNAL in size ${size} is confirmed.`); });
+        preorderForm.addEventListener('submit', (e) => { 
+            e.preventDefault(); 
+            const email = document.getElementById('email').value; 
+            const size = document.getElementById('size').value; 
+            const memberNumber = Math.floor(Math.random() * 50) + 1; 
+            alert(`You’ve been initiated. Signal received. Member #${memberNumber}. Your order for DROP 001: THE SIGNAL in size ${size} is confirmed.`); 
+        });
 
         const newsletterForm = document.querySelector('.newsletter-form');
-        newsletterForm.addEventListener('submit', (e) => { e.preventDefault(); alert('Thank you for subscribing to FRQNCY!'); });
+        newsletterForm.addEventListener('submit', (e) => { 
+            e.preventDefault(); 
+            alert('Thank you for subscribing to FRQNCY!'); 
+        });
 
         const canvas = document.querySelector('.particle-canvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        const particlesArray = []; const numberOfParticles = 50;
-        class Particle { constructor() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.size = Math.random() * 5 + 1; this.speedX = Math.random() * 0.5 - 0.25; this.speedY = Math.random() * 0.5 - 0.25; } update() { this.x += this.speedX; this.y += this.speedY; if (this.size > 0.2) this.size -= 0.01; if (this.x < 0 || this.x > canvas.width) this.speedX *= -1; if (this.y < 0 || this.y > canvas.height) this.speedY *= -1; } draw() { ctx.fillStyle = 'rgba(0, 240, 255, 0.5)'; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); } }
-        function initParticles() { for (let i = 0; i < numberOfParticles; i++) particlesArray.push(new Particle()); }
-        function animateParticles() { ctx.clearRect(0, 0, canvas.width, canvas.height); for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); particlesArray[i].draw(); } requestAnimationFrame(animateParticles); }
+        const particlesArray = []; 
+        const numberOfParticles = 50;
+        class Particle { 
+            constructor() { 
+                this.x = Math.random() * canvas.width; 
+                this.y = Math.random() * canvas.height; 
+                this.size = Math.random() * 5 + 1; 
+                this.speedX = Math.random() * 0.5 - 0.25; 
+                this.speedY = Math.random() * 0.5 - 0.25; 
+            } 
+            update() { 
+                this.x += this.speedX; 
+                this.y += this.speedY; 
+                if (this.size > 0.2) this.size -= 0.01; 
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1; 
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1; 
+            } 
+            draw() { 
+                ctx.fillStyle = 'rgba(0, 240, 255, 0.5)'; 
+                ctx.beginPath(); 
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); 
+                ctx.fill(); 
+            } 
+        }
+        function initParticles() { 
+            for (let i = 0; i < numberOfParticles; i++) particlesArray.push(new Particle()); 
+        }
+        function animateParticles() { 
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
+            for (let i = 0; i < particlesArray.length; i++) { 
+                particlesArray[i].update(); 
+                particlesArray[i].draw(); 
+            } 
+            requestAnimationFrame(animateParticles); 
+        }
         initParticles();
         animateParticles();
-        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
-
-        // 3D Model Viewer
-        const hoodieCanvas = document.getElementById('hoodie-canvas');
-        const scene = new THREE.Scene();
-        scene.background = null; // Transparent background to blend with website
-        const camera = new THREE.PerspectiveCamera(75, hoodieCanvas.clientWidth / hoodieCanvas.clientHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: hoodieCanvas, alpha: true });
-        renderer.setSize(hoodieCanvas.clientWidth, hoodieCanvas.clientHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
-
-        const controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.05;
-        controls.screenSpacePanning = false;
-        controls.minDistance = 2;
-        controls.maxDistance = 10;
-
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-        scene.add(ambientLight);
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-        directionalLight.position.set(5, 5, 5);
-        scene.add(directionalLight);
-
-        const loader = new THREE.GLTFLoader();
-        loader.load(
-            'https://frqncy.global/models/hoodie.glb', // Replace with your .glb file URL
-            (gltf) => {
-                const model = gltf.scene;
-                scene.add(model);
-                model.position.set(0, 0, 0);
-                model.scale.set(1, 1, 1);
-
-                const box = new THREE.Box3().setFromObject(model);
-                const center = box.getCenter(new THREE.Vector3());
-                model.position.sub(center); // Center the model
-                camera.position.z = box.getSize(new THREE.Vector3()).length();
-            },
-            (xhr) => {
-                console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-            },
-            (error) => {
-                console.error('An error occurred while loading the model:', error);
-            }
-        );
-
-        camera.position.z = 5;
-
-        function animate3D() {
-            requestAnimationFrame(animate3D);
-            controls.update();
-            renderer.render(scene, camera);
-        }
-        animate3D();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = hoodieCanvas.clientWidth / hoodieCanvas.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(hoodieCanvas.clientWidth, hoodieCanvas.clientHeight);
+        window.addEventListener('resize', () => { 
+            canvas.width = window.innerWidth; 
+            canvas.height = window.innerHeight; 
         });
     </script>
 </body>
